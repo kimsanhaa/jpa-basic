@@ -15,14 +15,14 @@ public class Main {
         tx.begin();
 
         Member member = new Member();
-        member.setId(1L);
-        member.setName("sanha");
+
+
+
 
         em.persist(member);
         tx.commit();
 
         em.close();
         emf.close();
-        System.out.println("Hello world!");
     }
 }

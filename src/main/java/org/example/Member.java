@@ -1,29 +1,24 @@
 package org.example;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
+
+import javax.persistence.*;
 
 import javax.persistence.Id;
+import java.util.Date;
+
 
 @Entity
+
 public class Member {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    @Column(name = "name")
+    private String username;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
+
+
+
