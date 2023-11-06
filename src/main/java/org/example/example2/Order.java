@@ -21,7 +21,6 @@ public class Order {
 
     @Column(name="ORDERDATE")
     private LocalDate orderDate;
-
     @Column(name="STATUS")
     private String status;
 
