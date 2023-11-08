@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Entity
+//@Entity
 public class Order {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "MEMBER")
+//@Entity(name = "MEMBER")
 @Data
 public class Member {
     @Id

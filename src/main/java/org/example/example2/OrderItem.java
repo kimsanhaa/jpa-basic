@@ -4,7 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Entity(name="ORDER_ITEM")
+//@Entity(name="ORDER_ITEM")
 @Data
 public class OrderItem {
 

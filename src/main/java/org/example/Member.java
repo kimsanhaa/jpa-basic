@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 
-@Entity
+//@Entity
 @Data
 public class Member {
     @Id

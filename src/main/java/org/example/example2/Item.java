@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity(name = "ITEM")
+//@Entity(name = "ITEM")
 @Data
 public class Item {
 

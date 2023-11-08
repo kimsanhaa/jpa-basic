@@ -2,7 +2,7 @@ package org.example.example3;
 
 import javax.persistence.*;
 
-@Entity
+//@Entity
 public class Delivery {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

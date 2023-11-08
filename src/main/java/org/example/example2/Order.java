@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name="ORDERS")
+//@Entity(name="ORDERS")
 @Data
 public class Order {
     @Id

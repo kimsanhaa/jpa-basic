@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.Member;
+import org.example.Team;
+import org.example.example4.Movie;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -8,31 +12,13 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("sanha");
 
         EntityManager em = emf.createEntityManager();
 
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-
-
-        Team team = new Team();
-        team.setName("sanha");
-        em.persist(team);
-
-        Member member = new Member();
-        member.setUsername("member1");
-        member.setTeam(team);
-        em.persist(member);
-
-        em.flush();
-        em.clear();
-
-        Member findMember = em.find(Member.class, member.getId());
-        List<Member> members = findMember.getTeam().getMembers();
-        for (Member m : members){
-            System.out.println("m.getUsername() = " + m.getUsername());
-        }
+        em.persist(movie);
         tx.commit();
 
         em.close();
