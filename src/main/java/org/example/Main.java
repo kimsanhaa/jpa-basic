@@ -15,13 +15,31 @@ public class Main {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("sanha");
 
         EntityManager em = emf.createEntityManager();
-
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-        em.persist(movie);
-        tx.commit();
+    try {
+        Team team = new Team();
+        team.setName("산하팀");
+        em.persist(team);
+        Member member = new Member();
+        member.setTeam(team);
 
+        em.persist(member);
+
+        em.flush();
+        em.clear();
+        System.out.println("=============================");
+        em.find(Member.class, member.getId());
+        System.out.println("=============================");
+
+        tx.commit();
+    }catch (Exception e){
+        tx.rollback();
+        e.printStackTrace();
+    } finally {
         em.close();
         emf.close();
+
+    }
     }
 }

@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Entity
+@Entity
 @Data
 public class Team {
     @Id @GeneratedValue
