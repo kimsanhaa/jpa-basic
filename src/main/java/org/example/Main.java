@@ -1,14 +1,11 @@
 package org.example;
 
-import org.example.Member;
-import org.example.Team;
-import org.example.example4.Movie;
+import org.example.example5.Child;
+import org.example.example5.Parent;
+import org.example.example6.Address;
+import org.example.example6.Member;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-import java.util.List;
+import javax.persistence.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,19 +15,26 @@ public class Main {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
     try {
-        Team team = new Team();
-        team.setName("산하팀");
-        em.persist(team);
-        Member member = new Member();
-        member.setTeam(team);
 
-        em.persist(member);
+        Member member1 = new Member();
+        member1.setUsername("member1");
+        member1.setHomeAddress(new Address("city1","street","10000"));
 
-        em.flush();
-        em.clear();
-        System.out.println("=============================");
-        em.find(Member.class, member.getId());
-        System.out.println("=============================");
+        member1.getFavoriteFoods().add("치킨");
+        member1.getFavoriteFoods().add("족발");
+        member1.getFavoriteFoods().add("피자");
+
+        member1.getAddressHistory().add(new Address("city2","street2","10002"));
+        member1.getAddressHistory().add(new Address("city3","street3","10003"));
+        member1.getAddressHistory().add(new Address("city4","street4","10004"));
+
+        em.persist(member1);
+
+
+
+
+
+
 
         tx.commit();
     }catch (Exception e){
@@ -39,7 +43,6 @@ public class Main {
     } finally {
         em.close();
         emf.close();
-
     }
     }
 }
